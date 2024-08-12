@@ -1,15 +1,11 @@
-// Stats.jsx
 import React from 'react';
 
-const Stats = ({ cost, totalStrength, totalAgility }) => {
-  return (
-    <div>
-      <h2>Team Stats</h2>
-      <p>Total Cost: ${cost}</p>
-      <p>Total Strength: {totalStrength}</p>
-      <p>Total Agility: {totalAgility}</p>
-    </div>
-  );
-};
+const Stats = ({ team }) => (
+  <div>
+    <h2>Stats</h2>
+    <p>Total Strength: {team.reduce((total, fighter) => total + fighter.strength, 0)}</p>
+    <p>Total Agility: {team.reduce((total, fighter) => total + fighter.agility, 0)}</p>
+  </div>
+);
 
 export default Stats;
